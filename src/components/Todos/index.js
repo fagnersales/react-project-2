@@ -4,7 +4,12 @@ import propTypes from 'prop-types'
 
 class Todos extends Component {
     render() {
-        return this.props.todos.map(todoData => <TodoItem key={todoData.id} todo={todoData} />)
+        return this.props.todos.map(todoData => (
+            <TodoItem key={todoData.id} 
+            todo={todoData} 
+            markComplete={this.props.markComplete} 
+            delTodo={this.props.delTodo}/>
+        ))
     }
 }
 
